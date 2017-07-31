@@ -1,0 +1,23 @@
+Given a problem:
+
+if you are given an array of size 'n+1' which has n distinct elements such that any element i, 1<=i<=n  can you find which element has a duplicate?
+
+eg: say  n = 5
+array = 3,2,1,5,4,2
+Here answer is 2
+
+There are several ways you can solve this.
+
+Solution1: take 1st element and compare with whole array if it exists. Then take 2nd element compare with all elements and see if it exists, take 3rd element and check if it's duplicate exists and so on.. If you check you'll notice this solution takes O(n^2). Thus it is slow and likely to give you a TLE error. Can you ind a better solution?
+
+Solution2: Sort the array using bubblesort/insertion sort. Then array will be in form 1,2,2,3,4,5. Now once you itteraate through the array you can easily find that 2 is the element with a duplicate. But have we done any better that soulution1? Alas, the complexity is still O(n^2). But wait, we do have sorting algorithms better than O(n^2).
+
+Solution3: Instead of Bubblesort/Insertion Sort lets apply Mergersort/Quicksort. Again array is in form 1,2,2,3,4,5 and we get our solution after that. This was done in O(nlogn). This is good but is it the best?
+
+Solution4: Make an array named visitedstatus[] of size n+1 and insitialise all index values of array to 0. Now start traversing our array = 3,2,1,5,4,2 and for each value you encounter make it's index value in visitedstatus array = 1. i.e first element is 3, so make visitedstatus[3] = 1, next element is 2 so make visitedstatus[2] = 1 then visitedstatus[1] = 1 and so on.. You will find that visitedstatus[2] is already 1 when you find the second 2 AND SO 2 is the element with duplicate. This solution was implemented in O(n). Viola !!. This solution will likely not give you an TLE errror, but you can wonder if there is yet a better solution.. 
+
+Solution5: Use BINARY SEARCH ! Ahha.. that's why the knowledge of algorithms is necessary. See, learning algorithms can make you a graet programmer. 
+Can you think how u can implement binary search to solve this problem? If you can then the time complexity will be O(logn). that's good. Actually that's the best way.
+
+So see, the way to tackle TLE problems is to THINK OF A BETTER SOLUTION. Using time complexity analysis and keeping good algorithms at the back of your hand can help you overcoming TLE problems but the main thing is you have to think of clever ways to solve and do a lot of practice. Hope this helps :)
+
